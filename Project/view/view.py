@@ -2,7 +2,9 @@ import pygame
 import math
 
 class GameView:
-    def __init__(self):
+    def __init__(self, model):
+        self.model = model
+
         pygame.init()
 
         # Set your desired resolution
