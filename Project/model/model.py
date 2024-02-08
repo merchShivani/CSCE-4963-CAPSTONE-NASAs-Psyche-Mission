@@ -8,3 +8,6 @@ class GameModel:
         self.dest_y = 0
         self.sprites = []
 
+        def update(self):
+        # Update model state based on user input or other factors
+            pass
