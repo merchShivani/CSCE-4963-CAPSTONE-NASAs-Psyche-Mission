@@ -1,5 +1,7 @@
 import pygame
 import math
+from sprites import Player, PsycheSpacecraft
+
 
 class GameView:
     def __init__(self, model):
@@ -28,10 +30,14 @@ class GameView:
         # Define positions for each image
 
 
-    def update_display(self):
+    def update_display(self, player, psyche_spacecraft):
         #self.screen.fill((0, 0, 0))  # Fill with black background
-        for i in range (0, 2):
+        for i in range(0, self.tiles + 1):
             self.screen.blit(self.space_backgroud,(i * self.space_background_width, 0))
+
+        # Draw player and Psyche spacecraft
+        self.screen.blit(self.model.player.image, self.model.player.rect.topleft)
+        self.screen.blit(self.model.psyche_spacecraft.image, self.model.psyche_spacecraft.rect.topleft)
 
         # Update the display
         pygame.display.flip()
