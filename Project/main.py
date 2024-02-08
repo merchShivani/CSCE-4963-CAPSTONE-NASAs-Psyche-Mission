@@ -4,7 +4,7 @@ from controller.controller import GameController
 
 def main():
     model = GameModel()
-    view = GameView()
+    view = GameView(model)
     controller = GameController(model, view)
 
     while True:
