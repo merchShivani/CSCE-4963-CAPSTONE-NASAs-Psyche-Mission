@@ -1,17 +1,3 @@
-# controller/game_controller.py
-import pygame
-
-class GameController:
-    def __init__(self, model, view):
-        self.model = model
-        self.view = view
-
-    def handle_events(self):
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                self.quit_game()
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:# controller/game_controller.py
 import pygame
 
 class GameController:
