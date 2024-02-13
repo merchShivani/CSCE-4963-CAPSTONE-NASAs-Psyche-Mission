@@ -1,6 +1,5 @@
 import pygame
-import math
-from sprites import Player, PsycheSpacecraft
+import os
 
 
 class GameView:
@@ -16,24 +15,17 @@ class GameView:
         self.screen = pygame.display.set_mode((game_width, game_height), pygame.FULLSCREEN)
         pygame.display.set_caption("Psyche")
 
+        # Change the working directory to where your assets folder is located
+        os.chdir("C:\\Psyche\\Psyche2\\Project")  # Change this to the correct path
+
         # Load multiple images from the "images" directory
-        self.space_backgroud = pygame.image.load("space.png")
-        self.space_background_width = self.space_backgroud.get_width()
-
-        # Define game variables 
-        self.tiles = math.ceil(game_width / self.space_background_width)
-        # Scale the images to the desired size
-        
-        # Get the rects of the images for positioning
+        self.background = pygame.image.load(os.path.join("assets\\images", "background.png"))
 
 
-        # Define positions for each image
-
-
-    def update_display(self, player, psyche_spacecraft):
-        #self.screen.fill((0, 0, 0))  # Fill with black background
-        for i in range(0, self.tiles + 1):
-            self.screen.blit(self.space_backgroud,(i * self.space_background_width, 0))
+    def update_display(self):
+        # Clear the screen
+        self.screen.fill((255, 255, 255))  # Fill with black background
+        self.screen.blit(self.background, (0, 0))
 
         # Draw player and Psyche spacecraft
         self.screen.blit(self.model.player.image, self.model.player.rect.topleft)

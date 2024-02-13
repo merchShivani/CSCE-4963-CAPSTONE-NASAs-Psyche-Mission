@@ -1,5 +1,7 @@
 import pygame
-from sprites import Player, PsycheSpacecraft
+from .sprites import Player, PsycheSpacecraft
+# import sys
+# print(sys.path)
 
 class GameModel:
     def __init__(self):
@@ -12,6 +14,6 @@ class GameModel:
         self.player = Player(100, 500)  # Adjust initial position as needed
         self.psyche_spacecraft = PsycheSpacecraft(800, 500)  # Adjust initial position as needed
 
-        def update(self):
-        # Update model state based on user input or other factors
-            pass
+    def update(self):
+    # Update model state based on user input or other factors
+        pass
