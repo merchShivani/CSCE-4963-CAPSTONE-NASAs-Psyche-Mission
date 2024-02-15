@@ -69,7 +69,7 @@ def start_menu():
         screen.fill(BLACK)
 
         # Draw title
-        draw_text("Colored Cartoon Adventure", title_font, BLUE, WIDTH // 2, HEIGHT // 4)
+        draw_text("Mission to Psyche", title_font, BLUE, WIDTH // 2, HEIGHT // 4)
 
         # Draw buttons
         for button in buttons:

@@ -1,6 +1,6 @@
 import pygame
 import os
-
+from utils import get_project_root
 
 class GameView:
     def __init__(self, model):
@@ -15,11 +15,10 @@ class GameView:
         self.screen = pygame.display.set_mode((game_width, game_height), pygame.FULLSCREEN)
         pygame.display.set_caption("Psyche")
 
-        # Change the working directory to where your assets folder is located
-        os.chdir("/Users/nathansampara/Desktop/CSCE-4963-CAPSTONE-NASAs-Psyche-Mission-1/Project")  # Change this to the correct path
+        root = get_project_root()
 
         # Load multiple images from the "images" directory
-        self.background = pygame.image.load(os.path.join("assets/images", "background.png"))
+        self.background = pygame.image.load(os.path.join(root, "project/assets/images/background.png"))
 
 
     def update_display(self):
