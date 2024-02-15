@@ -16,10 +16,10 @@ class GameView:
         pygame.display.set_caption("Psyche")
 
         # Change the working directory to where your assets folder is located
-        os.chdir("C:\\Psyche\\Psyche2\\Project")  # Change this to the correct path
+        os.chdir("/Users/nathansampara/Desktop/CSCE-4963-CAPSTONE-NASAs-Psyche-Mission-1/Project")  # Change this to the correct path
 
         # Load multiple images from the "images" directory
-        self.background = pygame.image.load(os.path.join("assets\\images", "background.png"))
+        self.background = pygame.image.load(os.path.join("assets/images", "background.png"))
 
 
     def update_display(self):
