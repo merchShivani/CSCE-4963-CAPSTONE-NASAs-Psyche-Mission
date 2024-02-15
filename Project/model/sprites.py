@@ -1,4 +1,5 @@
 import pygame
+import math
 
 
 class Player(pygame.sprite.Sprite):
@@ -35,7 +36,11 @@ class PsycheSpacecraft(pygame.sprite.Sprite):
         self.image.fill((0, 0, 255))  # Fill with blue color for now
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
+        self.orbit_angle = 0  # Initial orbit angle
 
-    def move_towards_player(self, player):
-        # Add logic to move the spacecraft towards the player
+    def update_orbit(self, center, radius, speed):
+        # Update spacecraft position based on orbit parameters
+        self.orbit_angle += speed
+        self.rect.centerx = center[0] + radius * math.cos(math.radians(self.orbit_angle))
+        self.rect.centery = center[1] + radius * math.sin(math.radians(self.orbit_angle))
         pass

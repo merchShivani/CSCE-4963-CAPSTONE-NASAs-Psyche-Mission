@@ -11,9 +11,15 @@ class GameModel:
         self.dest_y = 0
         self.sprites = []
         
-        self.player = Player(100, 500)  # Adjust initial position as needed
-        self.psyche_spacecraft = PsycheSpacecraft(800, 500)  # Adjust initial position as needed
+        # Create player and Psyche spacecraft
+        self.player = Player(100, 500)
+        self.psyche_spacecraft = PsycheSpacecraft(800, 500)
+
+        # Define orbit parameters
+        self.orbit_center = (1920 // 2, 1080 // 2)  # Center of the screen
+        self.orbit_radius = 400  # Radius of the orbit
+        self.orbit_speed = 0.5  # Speed of orbit in degrees/frame
 
     def update(self):
-    # Update model state based on user input or other factors
-        pass
+            # Update model state based on user input or other factors
+            self.psyche_spacecraft.update_orbit(self.orbit_center, self.orbit_radius, self.orbit_speed)
