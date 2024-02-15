@@ -28,7 +28,7 @@ BLACK = (0, 0, 0)
 
 # Initialize Pygame window
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Colored Cartoon Game Menu")
+pygame.display.set_caption("Mission to Psyche")
 
 # Fonts
 title_font = pygame.font.Font(None, 72)
