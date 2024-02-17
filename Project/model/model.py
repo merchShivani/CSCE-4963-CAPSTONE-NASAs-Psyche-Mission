@@ -18,7 +18,7 @@ class GameModel:
         # Define orbit parameters
         self.orbit_center = (1920 // 2, 1080 // 2)  # Center of the screen
         self.orbit_radius = 400  # Radius of the orbit
-        self.orbit_speed = 0.5  # Speed of orbit in degrees/frame
+        self.orbit_speed = 0.3  # Speed of orbit in degrees/frame
 
     def update(self):
             # Update model state based on user input or other factors

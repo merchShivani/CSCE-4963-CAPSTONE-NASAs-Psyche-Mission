@@ -19,6 +19,8 @@ class GameView:
 
         # Load multiple images from the "images" directory
         self.background = pygame.image.load(os.path.join(root, "project/assets/images/background.png"))
+        self.psyche = pygame.image.load(os.path.join(root, "project/assets/images/psyche_asteroid.png"))
+        self.psyche = pygame.transform.scale(self.psyche, (self.psyche.get_width() // 2, self.psyche.get_height() // 2))  # Scale the image to half size
 
 
     def update_display(self):
@@ -26,9 +28,15 @@ class GameView:
         self.screen.fill((255, 255, 255))  # Fill with black background
         self.screen.blit(self.background, (0, 0))
 
+        # Calculate position to center the image of psyche and render
+        psyche_x = (self.screen.get_width() - self.psyche.get_width()) // 2
+        psyche_y = (self.screen.get_height() - self.psyche.get_height()) // 2
+        self.screen.blit(self.psyche, (psyche_x, psyche_y))
+        
         # Draw player and Psyche spacecraft
         self.screen.blit(self.model.player.image, self.model.player.rect.topleft)
         self.screen.blit(self.model.psyche_spacecraft.image, self.model.psyche_spacecraft.rect.topleft)
+        
 
         # Update the display
         pygame.display.flip()

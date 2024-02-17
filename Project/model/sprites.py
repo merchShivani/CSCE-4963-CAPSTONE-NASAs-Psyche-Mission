@@ -36,11 +36,13 @@ class PsycheSpacecraft(pygame.sprite.Sprite):
         self.image.fill((0, 0, 255))  # Fill with blue color for now
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
-        self.orbit_angle = 0  # Initial orbit angle
+        self.orbit_angle = 0   # Initial orbit angle
+        self.major_axis = 800  # Major axis of the elliptical orbit
+        self.minor_axis = 200  # Minor axis of the elliptical orbit
 
     def update_orbit(self, center, radius, speed):
         # Update spacecraft position based on orbit parameters
         self.orbit_angle += speed
-        self.rect.centerx = center[0] + radius * math.cos(math.radians(self.orbit_angle))
-        self.rect.centery = center[1] + radius * math.sin(math.radians(self.orbit_angle))
+        self.rect.centerx = center[0] + self.major_axis * math.cos(math.radians(self.orbit_angle))
+        self.rect.centery = center[1] + self.minor_axis * math.sin(math.radians(self.orbit_angle))
         pass
