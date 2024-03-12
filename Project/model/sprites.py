@@ -46,3 +46,5 @@ class PsycheSpacecraft(pygame.sprite.Sprite):
         self.rect.centerx = center[0] + self.major_axis * math.cos(math.radians(self.orbit_angle))
         self.rect.centery = center[1] + self.minor_axis * math.sin(math.radians(self.orbit_angle))
         pass
+
+

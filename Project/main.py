@@ -1,3 +1,4 @@
+
 import pygame
 import sys
 import os
@@ -6,16 +7,20 @@ from utils import get_project_root
 from model.model import GameModel
 from view.view import GameView
 from controller.controller import GameController
+from spectrometer import Spectrometer
 
 def main():
     model = GameModel()
     view = GameView(model)
     controller = GameController(model, view)
+    spectrometer = Spectrometer()
+
 
     while True:
         controller.handle_events()
         controller.update_model()
         view.update_display()
+        spectrometer.run()
 
 pygame.init()
 
@@ -136,9 +141,14 @@ def handle_button_action(action):
         pygame.quit()
         sys.exit()
 
+
 # Create button rectangles
 for i, button in enumerate(buttons):
     button["rect"] = pygame.Rect(button_x, button_y + i * (button_height + 10), button_width, button_height)
+
+def is_a_pressed():
+    keys = pygame.key.get_pressed()
+    return keys[pygame.K_a]
 
 # Run the start menu
 start_menu()
