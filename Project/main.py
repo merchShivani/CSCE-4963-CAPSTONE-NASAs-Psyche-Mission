@@ -13,7 +13,7 @@ def main():
     model = GameModel()
     view = GameView(model)
     controller = GameController(model, view)
-    spectrometer = Spectrometer()
+    #spectrometer = Spectrometer()
 
 
     while True:
