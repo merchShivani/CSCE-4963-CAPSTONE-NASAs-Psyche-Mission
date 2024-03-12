@@ -20,7 +20,7 @@ def main():
         controller.handle_events()
         controller.update_model()
         view.update_display()
-        spectrometer.run()
+        #spectrometer.run()
 
 pygame.init()
 
