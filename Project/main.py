@@ -7,20 +7,17 @@ from utils import get_project_root
 from model.model import GameModel
 from view.view import GameView
 from controller.controller import GameController
-from spectrometer import Spectrometer
 
 def main():
     model = GameModel()
     view = GameView(model)
     controller = GameController(model, view)
-    #spectrometer = Spectrometer()
 
 
     while True:
         controller.handle_events()
         controller.update_model()
         view.update_display()
-        #spectrometer.run()
 
 pygame.init()
 
