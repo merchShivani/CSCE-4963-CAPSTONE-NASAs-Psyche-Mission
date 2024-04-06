@@ -6,7 +6,7 @@ class PsycheSpacecraft(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
         self.image = pygame.Surface((100, 100))  # Placeholder image
-        self.image = pygame.image.load("path_to_spacecraft_image.png").convert()
+#        self.image = pygame.image.load("path_to_spacecraft_image.png").convert()
         self.image.fill((0, 0, 255))  # Fill with blue color for now
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
@@ -35,7 +35,7 @@ class PsycheSpacecraft(pygame.sprite.Sprite):
 
 class GammaRay(pygame.sprite.Sprite):
     def __init__(self, x, y):
-        self.image = pygame.image.load("gamma_ray.png").conve.rt()
+#        self.image = pygame.image.load("gamma_ray.png").conve.rt()
         self.image = pygame.Surface((100, 50))  # Placeholder image
         self.image.fill((255, 0, 0))  # Fill with red color for now
         self.rect = self.image.get_rect()
@@ -56,7 +56,7 @@ class GammaRay(pygame.sprite.Sprite):
     
 class Neutrons(pygame.sprite.Sprite):
     def __init__(self, x, y):
-        self.image = pygame.image.load("neutron.png").convert()
+  #      self.image = pygame.image.load("neutron.png").convert()
         self.image = pygame.Surface((100, 50))  # Placeholder image
         self.image.fill((0, 0, 0))  # Fill with black color for now
         self.rect = self.image.get_rect()
