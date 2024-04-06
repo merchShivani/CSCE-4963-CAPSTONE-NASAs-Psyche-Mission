@@ -37,8 +37,8 @@ class PsycheSpacecraft(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
         self.orbit_angle = 0   # Initial orbit angle
-        self.major_axis = 800  # Major axis of the elliptical orbit
-        self.minor_axis = 200  # Minor axis of the elliptical orbit
+        self.major_axis = 750  # Major axis of the elliptical orbit
+        self.minor_axis = 500  # Minor axis of the elliptical orbit
 
     def update_orbit(self, center, radius, speed):
         # Update spacecraft position based on orbit parameters
