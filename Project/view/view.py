@@ -37,9 +37,13 @@ class GameView:
         self.screen.blit(self.model.player.image, self.model.player.rect.topleft)
         self.screen.blit(self.model.psyche_spacecraft.image, self.model.psyche_spacecraft.rect.topleft)
 
-        self.screen.blit(self.model.gamma.image, self.model.gamma.rect.topleft)
-        
-        self.screen.blit(self.model.neutron.image, self.model.neutron.rect.topleft)
+        # Draw each GammaRay in the gammas list
+        for gamma in self.model.gammas:
+            self.screen.blit(gamma.image, gamma.rect.topleft)
+
+        # Draw each Neutron in the neutrons list
+        for neutron in self.model.neutrons:
+            self.screen.blit(neutron.image, neutron.rect.topleft)
 
         # Update the display
         pygame.display.flip()
