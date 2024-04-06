@@ -23,7 +23,7 @@ class GameModel:
         self.orbit_speed = 0.3  # Speed of orbit in degrees/frame
 
         # Spectroscopy minigame toggle
-        self.spectroGame == False
+        self.spectroGame = False
 
     def update(self):
             # Update model state based on user input or other factors

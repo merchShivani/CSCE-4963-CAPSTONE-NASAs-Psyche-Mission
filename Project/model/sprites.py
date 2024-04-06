@@ -53,7 +53,9 @@ class PsycheSpacecraft(pygame.sprite.Sprite):
         if self.move_in == True:
             self.major_axis = (self.major_axis - 1)
             self.minor_axis = (self.major_axis - 1)
-
+        # Gravity
+        self.major_axis = (self.major_axis - 0.1)
+        self.minor_axis = (self.major_axis - 0.1)
         pass
 
 class GammaRay(pygame.sprite.Sprite):
