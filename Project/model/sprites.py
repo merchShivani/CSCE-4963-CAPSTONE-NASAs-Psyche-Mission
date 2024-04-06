@@ -37,14 +37,23 @@ class PsycheSpacecraft(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
         self.orbit_angle = 0   # Initial orbit angle
-        self.major_axis = 800  # Major axis of the elliptical orbit
+        self.major_axis = 250  # Major axis of the elliptical orbit
         self.minor_axis = 200  # Minor axis of the elliptical orbit
+        self.move_out = False
+        self.move_in = False
 
     def update_orbit(self, center, radius, speed):
         # Update spacecraft position based on orbit parameters
         self.orbit_angle += speed
         self.rect.centerx = center[0] + self.major_axis * math.cos(math.radians(self.orbit_angle))
         self.rect.centery = center[1] + self.minor_axis * math.sin(math.radians(self.orbit_angle))
+        if self.move_out == True:
+            self.major_axis = (self.major_axis + 1)
+            self.minor_axis = (self.major_axis + 1)
+        if self.move_in == True:
+            self.major_axis = (self.major_axis - 1)
+            self.minor_axis = (self.major_axis - 1)
+
         pass
 
     def check_collision(self, other_sprite):
@@ -89,3 +98,4 @@ class Neutrons(pygame.sprite.Sprite):
 
     def check_collision(self, other_sprite):
         return pygame.sprite.collide_rect(self, other_sprite)
+    
