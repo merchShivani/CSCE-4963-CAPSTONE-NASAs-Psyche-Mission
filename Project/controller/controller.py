@@ -18,6 +18,11 @@ class GameController:
                     self.model.orbit_speed = (self.model.orbit_speed / 4)
                 if event.key == pygame.K_RIGHT:
                     self.model.orbit_speed = (self.model.orbit_speed * 4)
+                if event.key == pygame.K_UP:
+                    self.model.psyche_spacecraft.move_out = True
+                if event.key == pygame.K_DOWN:
+                    self.model.psyche_spacecraft.move_in = True
+
 
             # Events when key released
             elif event.type == pygame.KEYUP:
@@ -25,6 +30,10 @@ class GameController:
                     self.model.orbit_speed = (self.model.orbit_speed * 4)
                 if event.key == pygame.K_RIGHT:
                     self.model.orbit_speed = (self.model.orbit_speed / 4) 
+                if event.key == pygame.K_UP:
+                    self.model.psyche_spacecraft.move_out = False
+                if event.key == pygame.K_DOWN:
+                    self.model.psyche_spacecraft.move_in = False
 
             # Events when mouse clicked
             elif event.type == pygame.MOUSEBUTTONDOWN:
