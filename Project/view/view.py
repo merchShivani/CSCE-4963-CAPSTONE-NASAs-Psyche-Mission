@@ -33,8 +33,7 @@ class GameView:
         psyche_y = (self.screen.get_height() - self.psyche.get_height()) // 2
         self.screen.blit(self.psyche, (psyche_x, psyche_y))
         
-        # Draw player and Psyche spacecraft
-        self.screen.blit(self.model.player.image, self.model.player.rect.topleft)
+        # Draw Psyche spacecraft
         self.screen.blit(self.model.psyche_spacecraft.image, self.model.psyche_spacecraft.rect.topleft)
 
         # Draw each GammaRay in the gammas list

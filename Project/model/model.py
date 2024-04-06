@@ -1,5 +1,5 @@
 import pygame
-from .sprites import Player, PsycheSpacecraft, GammaRay, Neutrons
+from .sprites import PsycheSpacecraft, GammaRay, Neutrons
 # import sys
 # print(sys.path)
 
@@ -12,7 +12,6 @@ class GameModel:
         self.sprites = []
         
         # Create player and Psyche spacecraft
-        self.player = Player(100, 500)
         self.psyche_spacecraft = PsycheSpacecraft(800, 500)
         self.gammas = [GammaRay(200, 700)]
         self.neutrons = [Neutrons(100, 900)]
