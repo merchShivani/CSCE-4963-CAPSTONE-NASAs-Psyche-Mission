@@ -40,10 +40,16 @@ class GammaRay(pygame.sprite.Sprite):
         self.image.fill((255, 0, 0))  # Fill with red color for now
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
+        self.velocity = 0
+        self.direction = 1
+        self.horizontal_speed = 3
 
     def update_position(self, dx, dy, screen_width, screen_height):
+        self.velocity += 3
         new_x = self.rect.x + dx
         new_y = self.rect.y + dy
+        new_y += self.velocity
+        new_x += self.horizontal_speed * self.direction
 
         # Check if the new position is within screen boundaries
         if 0 <= new_x <= screen_width - self.rect.width:

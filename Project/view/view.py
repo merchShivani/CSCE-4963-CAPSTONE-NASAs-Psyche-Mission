@@ -37,8 +37,8 @@ class GameView:
         self.screen.blit(self.model.psyche_spacecraft.image, self.model.psyche_spacecraft.rect.topleft)
 
         # Draw each GammaRay in the gammas list
-        for gamma in self.model.gammas:
-            self.screen.blit(gamma.image, gamma.rect.topleft)
+        #for gamma in self.model.gammas:
+            #self.screen.blit(gamma.image, gamma.rect.topleft)
 
         # Draw each Neutron in the neutrons list
         for neutron in self.model.neutrons:

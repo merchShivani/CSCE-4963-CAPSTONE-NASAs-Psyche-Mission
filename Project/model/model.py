@@ -13,7 +13,7 @@ class GameModel:
         
         # Create player and Psyche spacecraft
         self.psyche_spacecraft = PsycheSpacecraft(800, 500)
-        self.gammas = [GammaRay(200, 700)]
+        self.gammas = GammaRay(200, 700)
         self.neutrons = [Neutrons(100, 900)]
 
         # Define orbit parameters
@@ -31,6 +31,7 @@ class GameModel:
     def update(self):
             # Update model state based on user input or other factors
             self.psyche_spacecraft.update_orbit(self.orbit_center, self.orbit_radius, self.orbit_speed)
+            self.gammas.update_position(90, 80, 1920, 1080)
 
             # Spectroscopy Game
             if self.spectroGame_bool == True:
