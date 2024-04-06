@@ -47,6 +47,9 @@ class PsycheSpacecraft(pygame.sprite.Sprite):
         self.rect.centery = center[1] + self.minor_axis * math.sin(math.radians(self.orbit_angle))
         pass
 
+    def check_collision(self, other_sprite):
+        return pygame.sprite.collide_rect(self, other_sprite)
+
 class GammaRay(pygame.sprite.Sprite):
     def __init__(self, x, y):
         self.image = pygame.Surface((100, 50))  # Placeholder image

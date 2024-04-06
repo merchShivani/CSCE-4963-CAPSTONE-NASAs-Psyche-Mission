@@ -13,11 +13,23 @@ def main():
     view = GameView(model)
     controller = GameController(model, view)
 
-
     while True:
         controller.handle_events()
         controller.update_model()
+
+        # Handle GammaRay collisions
+        for gamma in model.gammas[:]:  # Iterate over a copy of the list
+            if model.psyche_spacecraft.check_collision(gamma):
+                model.gammas.remove(gamma)  # Remove the collided gamma
+
+        # Handle Neutron collisions
+        for neutron in model.neutrons[:]:  # Iterate over a copy of the list
+            if model.psyche_spacecraft.check_collision(neutron):
+                model.neutrons.remove(neutron)  # Remove the collided neutron
+
         view.update_display()
+
+
 
 pygame.init()
 
