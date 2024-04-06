@@ -21,10 +21,24 @@ class GameModel:
         self.orbit_center = (1920 // 2, 1080 // 2)  # Center of the screen
         self.orbit_radius = 400  # Radius of the orbit
         self.orbit_speed = 0.3  # Speed of orbit in degrees/frame
+        
+        # Spectroscropy Game parameters
+        self.captured_gammas = 0
+        self.captured_neutrons = 0
 
         # Spectroscopy minigame toggle
-        self.spectroGame = False
+        self.spectroGame_bool = False
 
     def update(self):
             # Update model state based on user input or other factors
             self.psyche_spacecraft.update_orbit(self.orbit_center, self.orbit_radius, self.orbit_speed)
+
+            # Spectroscopy Game
+            if self.spectroGame_bool == True:
+                 self.spectroGame()
+            if ((self.captured_gammas == 5) and (self.captured_neutrons == 5)):
+                 self.spectroGame_bool = False
+
+    def spectroGame(self):
+        self.captured_gammas = 0
+        self.captured_neutrons = 0
