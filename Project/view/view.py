@@ -36,7 +36,10 @@ class GameView:
         # Draw player and Psyche spacecraft
         self.screen.blit(self.model.player.image, self.model.player.rect.topleft)
         self.screen.blit(self.model.psyche_spacecraft.image, self.model.psyche_spacecraft.rect.topleft)
+
+        self.screen.blit(self.model.gamma.image, self.model.gamma.rect.topleft)
         
+        self.screen.blit(self.model.neutron.image, self.model.neutron.rect.topleft)
 
         # Update the display
         pygame.display.flip()

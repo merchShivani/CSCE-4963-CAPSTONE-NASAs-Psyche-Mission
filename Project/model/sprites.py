@@ -47,4 +47,42 @@ class PsycheSpacecraft(pygame.sprite.Sprite):
         self.rect.centery = center[1] + self.minor_axis * math.sin(math.radians(self.orbit_angle))
         pass
 
+class GammaRay(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+        self.image = pygame.Surface((100, 50))  # Placeholder image
+        self.image.fill((255, 0, 0))  # Fill with red color for now
+        self.rect = self.image.get_rect()
+        self.rect.center = (x, y)
 
+    def update_position(self, dx, dy, screen_width, screen_height):
+        new_x = self.rect.x + dx
+        new_y = self.rect.y + dy
+
+        # Check if the new position is within screen boundaries
+        if 0 <= new_x <= screen_width - self.rect.width:
+            self.rect.x = new_x
+        if 0 <= new_y <= screen_height - self.rect.height:
+            self.rect.y = new_y
+
+    def check_collision(self, other_sprite):
+        return pygame.sprite.collide_rect(self, other_sprite)
+    
+class Neutrons(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+        self.image = pygame.Surface((100, 50))  # Placeholder image
+        self.image.fill((0, 0, 0))  # Fill with black color for now
+        self.rect = self.image.get_rect()
+        self.rect.center = (x, y)
+
+    def update_position(self, dx, dy, screen_width, screen_height):
+        new_x = self.rect.x + dx
+        new_y = self.rect.y + dy
+
+        # Check if the new position is within screen boundaries
+        if 0 <= new_x <= screen_width - self.rect.width:
+            self.rect.x = new_x
+        if 0 <= new_y <= screen_height - self.rect.height:
+            self.rect.y = new_y
+
+    def check_collision(self, other_sprite):
+        return pygame.sprite.collide_rect(self, other_sprite)
