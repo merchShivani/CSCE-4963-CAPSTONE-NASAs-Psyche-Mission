@@ -1,5 +1,5 @@
 import pygame
-from .sprites import Player, PsycheSpacecraft
+from .sprites import Player, PsycheSpacecraft, GammaRay, Neutrons
 # import sys
 # print(sys.path)
 
@@ -14,6 +14,8 @@ class GameModel:
         # Create player and Psyche spacecraft
         self.player = Player(100, 500)
         self.psyche_spacecraft = PsycheSpacecraft(800, 500)
+        self.gamma = GammaRay(100, 700)
+        self.neutron = Neutrons(100, 900)
 
         # Define orbit parameters
         self.orbit_center = (1920 // 2, 1080 // 2)  # Center of the screen

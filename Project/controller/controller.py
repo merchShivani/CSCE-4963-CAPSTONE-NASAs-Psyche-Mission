@@ -55,4 +55,3 @@ class GameController:
     def quit_game(self):
         pygame.quit()
         exit()
-

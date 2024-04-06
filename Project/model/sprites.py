@@ -95,7 +95,4 @@ class Neutrons(pygame.sprite.Sprite):
 
     def check_collision(self, other_sprite):
         return pygame.sprite.collide_rect(self, other_sprite)
-
-        
-
-
+    
