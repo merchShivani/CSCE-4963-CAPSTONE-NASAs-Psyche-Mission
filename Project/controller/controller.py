@@ -22,6 +22,8 @@ class GameController:
                     self.model.psyche_spacecraft.move_out = True
                 if event.key == pygame.K_DOWN:
                     self.model.psyche_spacecraft.move_in = True
+                if event.key == pygame.K_s:
+                    self.model.sectroGame = True
 
 
             # Events when key released

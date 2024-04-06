@@ -22,6 +22,9 @@ class GameModel:
         self.orbit_radius = 400  # Radius of the orbit
         self.orbit_speed = 0.3  # Speed of orbit in degrees/frame
 
+        # Spectroscopy minigame toggle
+        self.spectroGame == False
+
     def update(self):
             # Update model state based on user input or other factors
             self.psyche_spacecraft.update_orbit(self.orbit_center, self.orbit_radius, self.orbit_speed)
