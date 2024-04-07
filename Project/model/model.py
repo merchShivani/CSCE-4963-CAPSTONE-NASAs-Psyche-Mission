@@ -14,7 +14,15 @@ class GameModel:
         # Create player and Psyche spacecraft
         self.psyche_spacecraft = PsycheSpacecraft(800, 500)
         self.gammas = GammaRay(200, 700)
-        self.neutrons = [Neutrons(100, 900)]
+        self.gammas1 = GammaRay(200, 700)
+        self.gammas2 = GammaRay(200, 700)
+        self.gammas3 = GammaRay(200, 700)
+        self.gammas4 = GammaRay(200, 700)
+        self.neutrons = Neutrons(200, 700)
+        self.neutrons1 = Neutrons(200, 700)
+        self.neutrons2 = Neutrons(200, 700)
+        self.neutrons3 = Neutrons(200, 700)
+        self.neutrons4 = Neutrons(200, 700)
 
         # Define orbit parameters
         self.orbit_center = (1920 // 2, 1080 // 2)  # Center of the screen
@@ -31,7 +39,16 @@ class GameModel:
     def update(self):
             # Update model state based on user input or other factors
             self.psyche_spacecraft.update_orbit(self.orbit_center, self.orbit_radius, self.orbit_speed)
-            self.gammas.update_position(90, 80, 1920, 1080)
+            self.gammas.update_position(960, 540, 1920, 1080)
+            self.gammas1.update_position(960, 540, 1920, 1080)
+            self.gammas2.update_position(960, 540, 1920, 1080)
+            self.gammas3.update_position(960, 540, 1920, 1080)
+            self.gammas4.update_position(960, 540, 1920, 1080)
+            self.neutrons.update_position(960, 540, 1920, 1080)
+            self.neutrons1.update_position(960, 540, 1920, 1080)
+            self.neutrons2.update_position(960, 540, 1920, 1080)
+            self.neutrons3.update_position(960, 540, 1920, 1080)
+            self.neutrons4.update_position(960, 540, 1920, 1080)
 
             # Spectroscopy Game
             if self.spectroGame_bool == True:
