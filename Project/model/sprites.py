@@ -1,6 +1,8 @@
 import random
 import pygame
 import math
+import os
+from utils import get_project_root
 
 
 class PsycheSpacecraft(pygame.sprite.Sprite):
@@ -36,9 +38,14 @@ class PsycheSpacecraft(pygame.sprite.Sprite):
 
 class GammaRay(pygame.sprite.Sprite):
     def __init__(self, x, y):
-#        self.image = pygame.image.load("gamma_ray.png").conve.rt()
-        self.image = pygame.Surface((100, 100))  # Placeholder image
-        self.image.fill((255, 0, 0))  # Fill with red color for now
+        root = get_project_root()
+        self.image = pygame.image.load(os.path.join(root, "project/assets/images/gamma.png"))
+
+        # Resize image
+        w = 50  # Adjust the width as needed
+        h = 50  # Adjust the height as needed
+        self.image = pygame.transform.scale(self.image, (w, h))
+
         self.rect = self.image.get_rect()
         self.rect.center = (960, 540)
         self.velocity = 0
@@ -71,9 +78,14 @@ class GammaRay(pygame.sprite.Sprite):
     
 class Neutrons(pygame.sprite.Sprite):
     def __init__(self, x, y):
-  #     self.image = pygame.image.load("neutron.png").convert()
-        self.image = pygame.Surface((100, 100))  # Placeholder image
-        self.image.fill((0, 0, 0))  # Fill with black color for now
+        root = get_project_root()
+        self.image = pygame.image.load(os.path.join(root, "project/assets/images/neutron.png"))
+
+        # Resize image
+        w = 50  # Adjust the width as needed
+        h = 50  # Adjust the height as needed
+        self.image = pygame.transform.scale(self.image, (w, h))
+
         self.rect = self.image.get_rect()
         self.rect.center = (960, 540)
         self.velocity = 0

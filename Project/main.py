@@ -99,7 +99,18 @@ def splash_screen():
     pygame.time.delay(3000)  # Adjust the delay time as needed
 
 def start_menu():
+    background = pygame.image.load(os.path.join(root, "project/assets/images/background.png"))
+    asteroid = pygame.image.load(os.path.join(root, "project/assets/images/psyche_asteroid.png")) 
 
+    # Resize asteroid image
+    asteroid_width = 150  # Adjust the width as needed
+    asteroid_height = 150  # Adjust the height as needed
+    asteroid = pygame.transform.scale(asteroid, (asteroid_width, asteroid_height))
+
+
+    # Define initial angle of rotation
+    angle = 0
+    
     splash_screen()
 
     while True:
@@ -114,9 +125,17 @@ def start_menu():
 
         # Draw background
         screen.fill(BLACK)
+        screen.blit(background, (0, 0))
+
+        # Rotate and draw asteroid
+        rotated_asteroid = pygame.transform.rotate(asteroid, angle)
+        screen.blit(rotated_asteroid, (100, 300))  # Adjust position as needed
+
+        # Increment rotation angle
+        angle += 1  # Adjust rotation speed as needed
 
         # Draw title
-        draw_text("Mission to Psyche", title_font, BLUE, WIDTH // 2, HEIGHT // 4)
+        draw_text("Mission to Psyche", title_font, WHITE, WIDTH // 2, HEIGHT // 4)
 
         # Draw buttons
         for button in buttons:
