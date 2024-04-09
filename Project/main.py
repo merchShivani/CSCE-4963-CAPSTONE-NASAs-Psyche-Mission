@@ -15,17 +15,7 @@ def main():
         controller.handle_events()
         controller.update_model()
         view.update_display()
-
-        
-        # Handle GammaRay collisions
-        for gamma in model.gammas[:]:  # Iterate over a copy of the list
-            if model.psyche_spacecraft.check_collision(gamma):
-                model.gammas.remove(gamma)  # Remove the collided gamma
-
-        # Handle Neutron collisions
-        for neutron in model.neutrons[:]:  # Iterate over a copy of the list
-            if model.psyche_spacecraft.check_collision(neutron):
-                model.neutrons.remove(neutron)  # Remove the collided neutron
+        model.handle_collisions()
 
 if __name__ == "__main__":
     pygame.init()  # Initialize Pygame before anything else
