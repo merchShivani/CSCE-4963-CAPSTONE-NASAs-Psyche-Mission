@@ -37,20 +37,11 @@ class GameView:
         # Draw Psyche spacecraft
         self.screen.blit(self.model.psyche_spacecraft.image, self.model.psyche_spacecraft.rect.topleft)
 
-        self.screen.blit(self.model.gammas.image, self.model.gammas.rect.topleft)
-        self.screen.blit(self.model.gammas1.image, self.model.gammas1.rect.topleft)
-        self.screen.blit(self.model.gammas2.image, self.model.gammas2.rect.topleft)
-        self.screen.blit(self.model.gammas3.image, self.model.gammas3.rect.topleft)
-        self.screen.blit(self.model.gammas4.image, self.model.gammas4.rect.topleft)
+        for gamma in self.model.gammas:
+            self.screen.blit(gamma.image, gamma.rect.topleft)
 
-        self.screen.blit(self.model.neutrons.image, self.model.neutrons.rect.topleft)
-        self.screen.blit(self.model.neutrons1.image, self.model.neutrons1.rect.topleft)
-        self.screen.blit(self.model.neutrons2.image, self.model.neutrons2.rect.topleft)
-        self.screen.blit(self.model.neutrons3.image, self.model.neutrons3.rect.topleft)
-        self.screen.blit(self.model.neutrons4.image, self.model.neutrons4.rect.topleft)
-
-
-        
+        for neutron in self.model.neutrons:
+            self.screen.blit(neutron.image, neutron.rect.topleft)
 
         # Draw each GammaRay in the gammas list
         #for gamma in self.model.gammas:
