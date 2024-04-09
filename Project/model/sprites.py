@@ -9,19 +9,14 @@ class PsycheSpacecraft(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
 
-        # Create a surface and fill it with blue color
-        self.image = pygame.Surface((100, 100))
-        self.image.fill((0, 0, 255))  # Fill with blue color
-
-        #Load the image of the spacecraft
+        # Load the image of the spacecraft
         root = get_project_root()
         image_path = os.path.join(root, "project/assets/images/spacecraft.png")
-        spacecraft_image = pygame.image.load(image_path).convert_alpha()
-        self.image = pygame.Surface((100, 100))  # Placeholder image
-       
-        #Resize image
-        self.image.blit(pygame.transform.scale(spacecraft_image, (100, 100)), (0, 0))
-        
+        original_image = pygame.image.load(image_path).convert_alpha()
+
+        # Resize the image
+        self.image = pygame.transform.scale(original_image, (100, 100))
+
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
 
