@@ -23,7 +23,7 @@ class GameController:
                 if event.key == pygame.K_DOWN:
                     self.model.psyche_spacecraft.move_in = True
                 if event.key == pygame.K_s:
-                    self.model.sectroGame = True
+                    self.model.spectroGame_bool = True
 
 
             # Events when key released
@@ -36,6 +36,9 @@ class GameController:
                     self.model.psyche_spacecraft.move_out = False
                 if event.key == pygame.K_DOWN:
                     self.model.psyche_spacecraft.move_in = False
+                if event.key == pygame.K_e:
+                    self.model.spectroGame_bool = False
+                    print("Exiting the game")
 
             # Events when mouse clicked
             elif event.type == pygame.MOUSEBUTTONDOWN:

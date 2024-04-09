@@ -10,6 +10,8 @@ class GameModel:
         self.dest_x = 0
         self.dest_y = 0
         self.sprites = []
+        # Spectroscopy minigame toggle
+        self.spectroGame_bool = False
         
         # Create player and Psyche spacecraft
         self.psyche_spacecraft = PsycheSpacecraft(800, 500)
@@ -25,38 +27,42 @@ class GameModel:
         self.captured_gammas = 0
         self.captured_neutrons = 0
 
-        # Spectroscopy minigame toggle
-        self.spectroGame_bool = False
-
     def update(self):
             # Update model state based on user input or other factors
             self.psyche_spacecraft.update_orbit(self.orbit_center, self.orbit_radius, self.orbit_speed)
 
-            for gamma in self.gammas:
-                gamma.update_position(960, 540, 1920, 1080)
-            for neutron in self.neutrons:
-                neutron.update_position(960, 540, 1920, 1080)
-
             # Spectroscopy Game
             if self.spectroGame_bool == True:
-                 self.spectroGame()
+                self.spectroGame()
+                for gamma in self.gammas:
+                    gamma.update_position(960, 540, 1920, 1080)
+                for neutron in self.neutrons:
+                    neutron.update_position(960, 540, 1920, 1080)
+
             if ((self.captured_gammas == 5) and (self.captured_neutrons == 5)):
                  self.spectroGame_bool = False
                  print("Captured all")
 
     def handle_collisions(self):
-        # Handle GammaRay collisions
-        for gamma in self.gammas[:]:  # Iterate over a copy of the list
-            if self.psyche_spacecraft.check_collision(gamma):
-                self.gammas.remove(gamma)  # Remove the collided gamma
-                # Increment captured_gammas or handle as needed
-                self.captured_gammas = self.captured_gammas + 1
-        # Handle Neutron collisions
-        for neutron in self.neutrons[:]:  # Iterate over a copy of the list
-            if self.psyche_spacecraft.check_collision(neutron):
-                self.neutrons.remove(neutron)  # Remove the collided neutron
-                # Increment captured_neutrons or handle as needed
-                self.captured_neutrons = self.captured_neutrons + 1
+        if self.spectroGame_bool == True:
+            # Handle GammaRay collisions
+            for gamma in self.gammas[:]:  # Iterate over a copy of the list
+                if self.psyche_spacecraft.check_collision(gamma):
+                    self.gammas.remove(gamma)  # Remove the collided gamma
+                    # Increment captured_gammas or handle as needed
+                    self.captured_gammas = self.captured_gammas + 1
+                    print(self.captured_gammas)
+                #if self.spectroGame_bool == False: 
+                    #self.gammas.remove(gamma)
+            # Handle Neutron collisions
+            for neutron in self.neutrons[:]:  # Iterate over a copy of the list
+                if self.psyche_spacecraft.check_collision(neutron):
+                    self.neutrons.remove(neutron)  # Remove the collided neutron
+                    # Increment captured_neutrons or handle as needed
+                    self.captured_neutrons = self.captured_neutrons + 1
+                    print(self.captured_neutrons)
+                #if self.spectroGame_bool == False: 
+                    #self.neutrons.remove(neutron)
 
     def spectroGame(self):
         self.captured_gammas = 0

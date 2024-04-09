@@ -37,11 +37,11 @@ class GameView:
         # Draw Psyche spacecraft
         self.screen.blit(self.model.psyche_spacecraft.image, self.model.psyche_spacecraft.rect.topleft)
 
-        for gamma in self.model.gammas:
-            self.screen.blit(gamma.image, gamma.rect.topleft)
-
-        for neutron in self.model.neutrons:
-            self.screen.blit(neutron.image, neutron.rect.topleft)
+        if self.model.spectroGame_bool == True: 
+            for gamma in self.model.gammas:
+                self.screen.blit(gamma.image, gamma.rect.topleft)
+            for neutron in self.model.neutrons:
+                self.screen.blit(neutron.image, neutron.rect.topleft)
 
         # Update the display
         pygame.display.flip()
