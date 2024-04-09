@@ -43,6 +43,18 @@ class GameModel:
             if ((self.captured_gammas == 5) and (self.captured_neutrons == 5)):
                  self.spectroGame_bool = False
 
+    def handle_collisions(self):
+        # Handle GammaRay collisions
+        for gamma in self.gammas[:]:  # Iterate over a copy of the list
+            if self.psyche_spacecraft.check_collision(gamma):
+                self.gammas.remove(gamma)  # Remove the collided gamma
+                # Increment captured_gammas or handle as needed
+        # Handle Neutron collisions
+        for neutron in self.neutrons[:]:  # Iterate over a copy of the list
+            if self.psyche_spacecraft.check_collision(neutron):
+                self.neutrons.remove(neutron)  # Remove the collided neutron
+                # Increment captured_neutrons or handle as needed
+
     def spectroGame(self):
         self.captured_gammas = 0
         self.captured_neutrons = 0
