@@ -8,11 +8,23 @@ from utils import get_project_root
 class PsycheSpacecraft(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
+
+        # Create a surface and fill it with blue color
+        self.image = pygame.Surface((100, 100))
+        self.image.fill((0, 0, 255))  # Fill with blue color
+
+        #Load the image of the spacecraft
+        root = get_project_root()
+        image_path = os.path.join(root, "project/assets/images/spacecraft.png")
+        spacecraft_image = pygame.image.load(image_path).convert_alpha()
         self.image = pygame.Surface((100, 100))  # Placeholder image
-#        self.image = pygame.image.load("path_to_spacecraft_image.png").convert()
-        self.image.fill((0, 0, 255))  # Fill with blue color for now
+       
+        #Resize image
+        self.image.blit(pygame.transform.scale(spacecraft_image, (100, 100)), (0, 0))
+        
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
+
         self.orbit_angle = 0   # Initial orbit angle
         self.major_axis = 250  # Major axis of the elliptical orbit
         self.minor_axis = 200  # Minor axis of the elliptical orbit
