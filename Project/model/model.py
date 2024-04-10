@@ -39,21 +39,29 @@ class GameModel:
                  self.spectroGame_bool = False
                  print("Captured all")
 
+
     def handle_collisions(self):
+        if self.spectroGame_bool == True:
         # Handle GammaRay collisions
-        for gamma in self.gammas[:]:  # Iterate over a copy of the list
-            if self.psyche_spacecraft.check_collision(gamma):
-                self.gammas.remove(gamma)  # Remove the collided gamma
-                # Increment captured_gammas or handle as needed
-                self.captured_gammas = self.captured_gammas + 1
-                print(self.captured_gammas)
-        # Handle Neutron collisions
-        for neutron in self.neutrons[:]:  # Iterate over a copy of the list
-            if self.psyche_spacecraft.check_collision(neutron):
-                self.neutrons.remove(neutron)  # Remove the collided neutron
-                # Increment captured_neutrons or handle as needed
-                self.captured_neutrons = self.captured_neutrons + 1
-                print(self.captured_neutrons)
+            for gamma in self.gammas[:]:  # Iterate over a copy of the list
+                if self.psyche_spacecraft.check_collision(gamma):
+                    self.gammas.remove(gamma)  # Remove the collided gamma
+                    # Increment captured_gammas or handle as needed
+                    self.captured_gammas = self.captured_gammas + 1
+                    if self.captured_gammas == 1:
+                        print(self.captured_gammas, "gamma")
+                    else:
+                        print(self.captured_gammas, "gammas")
+            # Handle Neutron collisions
+            for neutron in self.neutrons[:]:  # Iterate over a copy of the list
+                if self.psyche_spacecraft.check_collision(neutron):
+                    self.neutrons.remove(neutron)  # Remove the collided neutron
+                    # Increment captured_neutrons or handle as needed
+                    self.captured_neutrons = self.captured_neutrons + 1
+                    if self.captured_neutrons == 1:
+                        print(self.captured_neutrons, "neutron")
+                    else:
+                        print(self.captured_neutrons, "neutrons")
 
     def spectroGame(self):
         #self.captured_gammas = 0
