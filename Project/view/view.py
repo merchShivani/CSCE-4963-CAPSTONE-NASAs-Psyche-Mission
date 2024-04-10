@@ -12,6 +12,8 @@ class GameView:
         # Set your desired resolution
         game_width, game_height = 1920, 1080
 
+        self.is_fullscreen = True  # Tracks the fullscreen state
+
         # Set the display mode to fullscreen with the specified game resolution
         self.screen = pygame.display.set_mode((game_width, game_height), pygame.FULLSCREEN)
         pygame.display.set_caption("Psyche")
@@ -23,6 +25,14 @@ class GameView:
         self.psyche = pygame.image.load(os.path.join(root, "project/assets/images/psyche_asteroid.png"))
         self.psyche = pygame.transform.scale(self.psyche, (self.psyche.get_width() // 2, self.psyche.get_height() // 2))  # Scale the image to half size
 
+    def toggle_fullscreen(self):
+        # Toggles fullscreen mode
+        if self.is_fullscreen:
+            self.screen = pygame.display.set_mode((self.game_width, self.game_height))
+            self.is_fullscreen = False
+        else:
+            self.screen = pygame.display.set_mode((self.game_width, self.game_height), pygame.FULLSCREEN)
+            self.is_fullscreen = True
 
     def update_display(self):
         # Clear the screen
