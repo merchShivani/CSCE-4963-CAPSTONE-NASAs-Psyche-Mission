@@ -11,6 +11,9 @@ class GameModel:
 
         # Instantiate Magfield Game
         self.magfield_game = magField1()
+
+        # Capture Game Data
+        self.captures = 0
         
         # Create player and Psyche spacecraft
         self.psyche_spacecraft = PsycheSpacecraft(800, 500)
@@ -39,19 +42,23 @@ class GameModel:
         # Spectroscopy Game
         if self.spectroGame_bool:
             self.spectroGame()
+            if self.captures >= 10:
+                self.spectroGame_bool = False
+                self.captures = 0
 
     def handle_collisions(self):
-        self.spectroGame_bool = True
         # Handle GammaRay collisions
         for gamma in self.gammas[:]:  # Iterate over a copy of the list
             if self.psyche_spacecraft.check_collision(gamma):
                 self.gammas.remove(gamma)  # Remove the collided gamma
+                self.captures += 1
                 # Increment captured_gammas or handle as needed
 
         # Handle Neutron collisions
         for neutron in self.neutrons[:]:  # Iterate over a copy of the list
             if self.psyche_spacecraft.check_collision(neutron):
                 self.neutrons.remove(neutron)  # Remove the collided neutron
+                self.captures += 1
                 # Increment captured_neutrons or handle as needed
 
     def spectroGame(self):
