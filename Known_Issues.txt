@@ -1,5 +1,4 @@
 Known Issues:
     Green Boxes covering gray squares between match game rounds.
-    Gammas and Neutron Capture Game only plays once.
     Notification for completion of capture game
     Counter for capture game
