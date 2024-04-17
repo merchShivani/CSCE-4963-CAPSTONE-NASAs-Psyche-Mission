@@ -53,8 +53,10 @@ class GammaRay(pygame.sprite.Sprite):
         h = 50  # Adjust the height as needed
         self.image = pygame.transform.scale(self.image, (w, h))
 
+        super().__init__()  # Initialize the sprite class
+
         self.rect = self.image.get_rect()
-        self.rect.center = (960, 540)
+        self.rect.center = (x, y)
         self.velocity = 0
         self.direction = 1
         self.horizontal_speed = 3
@@ -62,27 +64,25 @@ class GammaRay(pygame.sprite.Sprite):
         self.speedy = random.randint(-5, 5)
 
     def update_position(self, dx, dy, screen_width, screen_height):
-        width, height = 1920, 1200
+        width, height = screen_width, screen_height
         new_x = self.rect.x + dx
         new_y = self.rect.y + dy
 
-        if not 0 < self.rect.x < width:
-            self.speedx *= -1 # reverse direction
+        # Define the margin distance from the edge
+        margin = 20
+
+        # Check if any part of the sprite is within the margin distance of the screen boundaries
+        if (self.rect.right < margin or self.rect.left > width - margin or
+            self.rect.bottom < margin or self.rect.top > height - margin):
+            self.kill()  # Remove the sprite if it is within the margin distance of any screen boundary
+
+        # Update the position of the sprite
         self.rect.x += self.speedx
-
-        if not 0 < self.rect.y < height:
-            self.speedy *= -1 # reverse direction
         self.rect.y += self.speedy
-
-        # Check if the new position is within screen boundaries
-        #if 0 <= new_x <= screen_width - self.rect.width:
-            #self.rect.x = new_x
-        #if 0 <= new_y <= screen_height - self.rect.height:
-            #self.rect.y = new_y
 
     def check_collision(self, other_sprite):
         return pygame.sprite.collide_rect(self, other_sprite)
-    
+
 class Neutrons(pygame.sprite.Sprite):
     def __init__(self, x, y):
         root = get_project_root()
@@ -93,8 +93,10 @@ class Neutrons(pygame.sprite.Sprite):
         h = 50  # Adjust the height as needed
         self.image = pygame.transform.scale(self.image, (w, h))
 
+        super().__init__()  # Initialize the sprite class
+
         self.rect = self.image.get_rect()
-        self.rect.center = (960, 540)
+        self.rect.center = (x, y)
         self.velocity = 0
         self.direction = 1
         self.horizontal_speed = 3
@@ -102,18 +104,21 @@ class Neutrons(pygame.sprite.Sprite):
         self.speedy = random.randint(-5, 5)
 
     def update_position(self, dx, dy, screen_width, screen_height):
-        width, height = 1920, 1200
+        width, height = screen_width, screen_height
         new_x = self.rect.x + dx
         new_y = self.rect.y + dy
 
-        if not 0 < self.rect.x < width:
-            self.speedx *= -1 # reverse direction
-        self.rect.x += self.speedx
+        # Define the margin distance from the edge
+        margin = 20
 
-        if not 0 < self.rect.y < height:
-            self.speedy *= -1 # reverse direction
+        # Check if any part of the sprite is within the margin distance of the screen boundaries
+        if (self.rect.right < margin or self.rect.left > width - margin or
+            self.rect.bottom < margin or self.rect.top > height - margin):
+            self.kill()  # Remove the sprite if it is within the margin distance of any screen boundary
+            
+        # Update the position of the sprite
+        self.rect.x += self.speedx
         self.rect.y += self.speedy
 
     def check_collision(self, other_sprite):
         return pygame.sprite.collide_rect(self, other_sprite)
-    

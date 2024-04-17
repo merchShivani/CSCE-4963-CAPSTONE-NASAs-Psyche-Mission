@@ -42,6 +42,13 @@ class GameView:
             self.screen = pygame.display.set_mode((self.game_width, self.game_height), pygame.FULLSCREEN)
             self.is_fullscreen = True
 
+    def draw_gammas_and_neutrons(self):
+        if self.model.spectroGame_bool:
+            for gamma in self.model.gammas:
+                self.screen.blit(gamma.image, gamma.rect.topleft)
+            for neutron in self.model.neutrons:
+                self.screen.blit(neutron.image, neutron.rect.topleft)
+
     def update_display(self):
         if self.model.magfieldGame_bool == False:
             # Clear the screen
@@ -64,11 +71,8 @@ class GameView:
             # Draw Psyche spacecraft
             self.screen.blit(self.model.psyche_spacecraft.image, self.model.psyche_spacecraft.rect.topleft)
 
-            if self.model.spectroGame_bool == True: 
-                for gamma in self.model.gammas:
-                    self.screen.blit(gamma.image, gamma.rect.topleft)
-                for neutron in self.model.neutrons:
-                    self.screen.blit(neutron.image, neutron.rect.topleft)
+            # Draw gammas and neutrons
+            self.draw_gammas_and_neutrons()
 
             # Update the display
             pygame.display.flip()
