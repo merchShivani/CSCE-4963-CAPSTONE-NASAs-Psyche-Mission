@@ -88,7 +88,7 @@ class GameController:
             "Up arrow key: increase the size of the spacecraft's orbit.",
             "Down arrow key: decrease the size of the spacecraft's orbit.",
             "",
-            "Press 's' again to start the Spectrometer mini-game or any other key to close."
+            "Double tap 's' again to start the Spectrometer mini-game or any other key to close."
         ]
         self.spectrometer_instructions_displayed = True
         self.display_instructions_popup(instructions)
@@ -107,7 +107,7 @@ class GameController:
             "Each time you get a pattern correctly, you will scan the asteroid for its magnetic field.",
             "If you correctly match 3 patterns, you will win the game and advance to the next mini-games!",
             "",
-            "Press 'm' again to start the Magnetic Field mini-game or any other key to close."
+            "Double tap 'm' again to start the Magnetic Field mini-game or any other key to close."
         ]
         self.magnetic_instructions_displayed = True
         self.display_instructions_popup(instructions)
