@@ -4,6 +4,8 @@ import time
 from pygame.locals import USEREVENT
 from .sprites import PsycheSpacecraft, GammaRay, Neutrons
 from magField import magField1
+from utils import get_project_root  # Import get_project_root
+import os
 
 class GameModel:
     def __init__(self):
@@ -59,6 +61,9 @@ class GameModel:
             if self.captures >= 10:
                 self.spectroGame_bool = False
                 self.captures = 0
+                root = get_project_root()
+                victory_sound = pygame.mixer.Sound(os.path.join(root,'project/assets/Music/success-1-6297.mp3'))
+                victory_sound.play()
 
     def generate_sprites(self):
         current_time = pygame.time.get_ticks()
