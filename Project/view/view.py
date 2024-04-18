@@ -85,6 +85,10 @@ class GameView:
             if self.magfield_game.create_mini_screen(self.screen):
                 print("You've won the matching game!")
                 self.model.magfieldGame_bool = False
+                root = get_project_root()
+                victory_sound = pygame.mixer.Sound(os.path.join(root,'project/assets/Music/success-1-6297.mp3'))
+                victory_sound.play()
+
             else:
                 print("You've lost the matching game!")
                 self.model.magfieldGame_bool = False
