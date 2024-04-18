@@ -87,6 +87,10 @@ class GameModel:
                 self.captures += 1
                 print(self.captures)
                 # Increment captured_gammas or handle as needed
+                root = get_project_root()
+                victory_sound = pygame.mixer.Sound(os.path.join(root,'project/assets/Music/mixkit-achievement-completed-2068.wav'))
+                victory_sound.play()
+                
 
         # Handle Neutron collisions
         for neutron in self.neutrons[:]:  # Iterate over a copy of the list
@@ -95,6 +99,9 @@ class GameModel:
                 self.captures += 1
                 print(self.captures)
                 # Increment captured_neutrons or handle as needed
+                root = get_project_root()
+                victory_sound = pygame.mixer.Sound(os.path.join(root,'project/assets/Music/mixkit-achievement-completed-2068.wav'))
+                victory_sound.play()
 
     def spectroGame(self):
         # Draw sprites onto the screen
