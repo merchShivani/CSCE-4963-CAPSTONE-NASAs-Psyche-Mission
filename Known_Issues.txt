@@ -1,4 +1,3 @@
 Known Issues:
-    Green Boxes covering gray squares between match game rounds.
     Notification for completion of capture game
     Counter for capture game
