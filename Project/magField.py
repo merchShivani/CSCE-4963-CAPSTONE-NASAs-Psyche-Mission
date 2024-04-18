@@ -63,11 +63,17 @@ class magField1:
                 self.mini_screen.fill((255, 255, 255, 0))
 
                 if show_pattern:
+                    # Clear the mini screen with grey squares
+                    for row in range(GRID_SIZE):
+                        for col in range(GRID_SIZE):
+                            pygame.draw.rect(self.mini_screen, GRAY, (col * SQUARE_SIZE, row * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE))
+
                     # Show the pattern one by one
                     for row in range(GRID_SIZE):
                         for col in range(GRID_SIZE):
                             if pattern[row][col] == 1:
                                 pygame.draw.rect(self.mini_screen, WHITE, (col * SQUARE_SIZE, row * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE))
+                    
                     main_screen.blit(self.mini_screen, (0, 0))  # Blit mini_screen onto main_screen
                     pygame.display.flip()
                     # Check if one second has elapsed
