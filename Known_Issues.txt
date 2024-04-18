@@ -1,3 +1,5 @@
 Known Issues:
     Notification for completion of capture game
     Counter for capture game
+    Fix how psyche sprite looks
+    Improve craft controls and re-impliment gravity.
