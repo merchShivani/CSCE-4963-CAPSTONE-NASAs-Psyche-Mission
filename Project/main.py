@@ -20,7 +20,15 @@ def main():
 
 if __name__ == "__main__":
     pygame.init()  # Initialize Pygame before anything else
-    game_width, game_height = 1920, 1080
+
+    # Get display info
+    info = pygame.display.Info()
+
+    # Get fullscreen width and height
+    game_width = info.current_w
+    game_height = info.current_h
+
+    #game_width, game_height = 1920, 1080
     root = get_project_root()
     # Set the display mode to fullscreen with the specified game resolution
     screen = pygame.display.set_mode((game_width, game_height), pygame.FULLSCREEN)
