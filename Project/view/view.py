@@ -52,8 +52,27 @@ class GameView:
     def update_display(self):
         if self.model.magfieldGame_bool == False:
             # Clear the screen
-            self.screen.fill((255, 255, 255))  # Fill with black background
+            self.screen.fill((0, 0, 0))  # Fill with black background
             self.screen.blit(self.background, (0, 0))
+            # Variable to store the time when the text is displayed
+            display_start_time = 0
+            # Duration of displaying the text (in milliseconds)
+            display_duration = 30000  # 30 seconds
+            font = pygame.font.SysFont(None, 32)
+            WHITE = (255,255,255)
+            # Render text
+            text = font.render("Click 'i' to go to main menu", True, WHITE)
+                    # Get the rect object of the text surface
+            text_rect = text.get_rect()
+                
+                # Center the text on the screen
+            text_rect.center = (300, 500)
+                #self.texttoggle = True
+                #if self.texttoggle == True:
+                    # Blit the text onto the screen
+            #if self.texttoggle == True:
+            self.screen.blit(text, text_rect)
+                #if get_current_time - start_time > 3
 
             # Calculate position to center the image of psyche and render
             psyche_x = (self.screen.get_width() - self.psyche.get_width()) // 2

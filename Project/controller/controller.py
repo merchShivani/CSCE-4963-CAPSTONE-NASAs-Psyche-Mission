@@ -26,11 +26,13 @@ class GameController:
                 elif event.key == pygame.K_s:
                     if not self.spectrometer_instructions_displayed:
                         self.show_spectrometer_instructions_popup()
+                        self.view.texttoggle = False
                     else:
                         self.model.spectroGame_bool = True
                 elif event.key == pygame.K_m:
                     if not self.magnetic_instructions_displayed:
                         self.show_magnetic_instructions_popup()
+                        self.view.texttoggle = True
                     else:
                         self.model.magfieldGame_bool = True
                 elif event.key == pygame.K_i:
