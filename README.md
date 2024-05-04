@@ -85,7 +85,7 @@ By incorporating a mini-game focused on memorization and pattern recognition, pl
 
 
 
-# Importance to NASA: 
+## Importance to NASA: 
 Mapping Magnetic Fields: Understanding the magnetic properties of asteroids like Psyche can reveal insights into their formation and evolutionary history. 
 By mapping the asteroid's magnetic field, scientists can infer its internal structure and composition.
 Investigating Planetary Differentiation: The presence or absence of a magnetic field can provide clues about the processes that led to planetary differentiation. 
@@ -94,20 +94,19 @@ Scientific Collaboration and Discovery: The data collected by the magnetometer o
 
 
 
+
 # About the Psyche Mission:
 
-*Importance of the Psyche Mission*
-
-The Psyche mission holds significant importance in understanding the formation and evolution of planets. 
+*The Psyche mission holds significant importance in understanding the formation and evolution of planets. 
 By studying Psyche, scientists hope to gain insights into the processes that occurred during the early stages of our solar system's formation. 
 Additionally, understanding metallic asteroids like Psyche could provide valuable information for future asteroid mining endeavors.
 By including the Spectrometer and Magnetic Field mini-games in the Mission to Psyche game, we aim to educate and inspire players about the importance of these instruments in NASA's Psyche mission. 
-Through interactive gameplay, players can experience the excitement of scientific exploration and gain a deeper appreciation for the groundbreaking research conducted by NASA and its partners.
+Through interactive gameplay, players can experience the excitement of scientific exploration and gain a deeper appreciation for the groundbreaking research conducted by NASA and its partners.*
 
 
 
 **Goal of the Mission to Psyche Game**
 
-The main goal of creating the Mission to Psyche game is to make learning about the Psyche mission engaging and accessible to a wide audience. By incorporating mini-games that simulate the instruments used in the mission, players can immerse themselves in the scientific exploration of this fascinating asteroid. We aim to inspire curiosity and interest in space exploration, particularly among students and enthusiasts.
+*The main goal of creating the Mission to Psyche game is to make learning about the Psyche mission engaging and accessible to a wide audience. By incorporating mini-games that simulate the instruments used in the mission, players can immerse themselves in the scientific exploration of this fascinating asteroid. We aim to inspire curiosity and interest in space exploration, particularly among students and enthusiasts.*
 
-Enjoy your journey through the Mission to Psyche game, and happy exploring!
+*Enjoy your journey through the Mission to Psyche game, and happy exploring!*
