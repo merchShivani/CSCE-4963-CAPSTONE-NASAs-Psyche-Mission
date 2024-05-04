@@ -1,4 +1,4 @@
-**Mission to Psyche Game**
+# Mission to Psyche Game
 
 *Welcome to the Mission to Psyche game! This is an educational game where you will learn about NASA’s Psyche mission. You will have the opportunity to engage with mini-games that are both fun and educational, relating to the instruments NASA is using on this groundbreaking mission.*
 
